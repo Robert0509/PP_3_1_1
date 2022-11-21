@@ -14,8 +14,9 @@ import java.util.Optional;
 @Transactional(readOnly = true)
 public class UserServiceImpl implements UserService {
     private final UsersRepository usersRepository;
+
     @Autowired
-    public UserServiceImpl( UsersRepository usersRepository) {
+    public UserServiceImpl(UsersRepository usersRepository) {
         this.usersRepository = usersRepository;
 
     }
@@ -33,14 +34,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById(int id) {
-        Optional<User> optionalUser= usersRepository.findById(id);
+        Optional<User> optionalUser = usersRepository.findById(id);
         return optionalUser.orElse(null);
     }
 
     @Override
     @Transactional
-    public void update(int id,User updatedUser) {
-        updatedUser.setId(id);
+    public void update(User updatedUser) {
         usersRepository.save(updatedUser);
     }
 
