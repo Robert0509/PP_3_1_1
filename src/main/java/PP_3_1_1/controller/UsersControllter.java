@@ -1,7 +1,7 @@
 package PP_3_1_1.controller;
 
 
-import PP_3_1_1.models.User;
+import PP_3_1_1.model.User;
 import PP_3_1_1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

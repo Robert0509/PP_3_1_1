@@ -1,6 +1,6 @@
 package PP_3_1_1.service;
 
-import PP_3_1_1.models.User;
+import PP_3_1_1.model.User;
 
 import java.util.List;
 

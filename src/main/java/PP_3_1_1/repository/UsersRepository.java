@@ -1,6 +1,6 @@
-package PP_3_1_1.repositories;
+package PP_3_1_1.repository;
 
-import PP_3_1_1.models.User;
+import PP_3_1_1.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

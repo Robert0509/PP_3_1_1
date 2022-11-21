@@ -1,8 +1,8 @@
 package PP_3_1_1.service;
 
 
-import PP_3_1_1.models.User;
-import PP_3_1_1.repositories.UsersRepository;
+import PP_3_1_1.model.User;
+import PP_3_1_1.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
