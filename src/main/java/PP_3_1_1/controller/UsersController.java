@@ -13,12 +13,12 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/users")
-public class UsersControllter {
+public class UsersController {
 
-    private UserService userService;
+    private final UserService userService;
 
     @Autowired
-    public UsersControllter(UserService userService) {
+    public UsersController(UserService userService) {
         this.userService = userService;
     }
 
@@ -31,8 +31,13 @@ public class UsersControllter {
 
     @GetMapping("/{id}")
     public String getUserById(@PathVariable("id") int id, Model model) {
-        model.addAttribute("user", userService.getUserById(id));
-        return "show";
+        User userById = userService.getUserById(id);
+        if (userById != null) {
+            model.addAttribute("user", userById);
+            return "show";
+        } else {
+            return "not-found-user";
+        }
     }
 
     @GetMapping("/new")
@@ -51,8 +56,13 @@ public class UsersControllter {
 
     @GetMapping("/{id}/update")
     public String getUserFromForUpdate(@PathVariable("id") int id, Model model) {
-        model.addAttribute("user", userService.getUserById(id));
-        return "edit";
+        User userById = userService.getUserById(id);
+        if (userById != null) {
+            model.addAttribute("user", userService.getUserById(id));
+            return "edit";
+        } else {
+            return "not-found-user";
+        }
     }
 
     @PatchMapping("/{id}")
